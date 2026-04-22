@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Alejandro Salazar Rodríguez — Psiquiatra &amp; TCC · CDMX</title>
+<title>Dr. Alejandro Salazar Rodríguez — Psiquiatra & TCC · CDMX</title>
 <meta name="description" content="Psiquiatra en CDMX con Maestría en Terapia Cognitivo-Conductual. Consulta presencial y en línea, en español e inglés. Cédula 15145882.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
@@ -165,6 +165,39 @@ section { padding:100px 80px; }
 .brg { display:inline-flex; align-items:center; gap:10px; background:#00CCBB; color:var(--white); padding:13px 30px; border-radius:7px; font-size:14px; font-weight:500; transition:background .3s,transform .3s; box-shadow:0 4px 16px rgba(0,204,187,.25); }
 .brg:hover { background:#00B5A5; transform:translateY(-2px); }
 
+/* OPINIONES */
+#opiniones { background:var(--cream); }
+.opinions-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:10px; }
+.op-card { background:var(--white); border-radius:10px; border:1px solid var(--border); padding:24px; display:flex; flex-direction:column; gap:14px; transition:transform .3s var(--ease),box-shadow .3s var(--ease); }
+.op-card:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(27,42,82,.08); }
+.op-stars { display:flex; gap:3px; color:var(--gold); font-size:14px; }
+.op-text { font-size:14.5px; line-height:1.7; color:var(--text); font-style:italic; flex:1; }
+.op-meta { display:flex; flex-direction:column; gap:3px; border-top:1px solid var(--border); padding-top:12px; }
+.op-name { font-size:13px; font-weight:600; color:var(--navy); }
+.op-type { font-size:11.5px; color:var(--muted); }
+.op-date { font-size:11px; color:var(--gold); }
+.op-verified { display:inline-flex; align-items:center; gap:4px; font-size:10.5px; color:#22c55e; font-weight:600; background:rgba(34,197,94,.08); padding:2px 8px; border-radius:50px; margin-top:4px; width:fit-content; }
+.opinions-stats { display:flex; gap:32px; background:var(--navy); border-radius:12px; padding:28px 36px; margin-bottom:36px; flex-wrap:wrap; }
+.ostat { display:flex; flex-direction:column; gap:4px; }
+.ostat-n { font-family:var(--fh); font-size:40px; font-weight:400; color:var(--white); line-height:1; }
+.ostat-l { font-size:13px; color:rgba(255,255,255,.55); }
+.ostat-divider { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+.opinions-cta { text-align:center; margin-top:32px; }
+.opinions-cta a { display:inline-flex; align-items:center; gap:8px; background:var(--navy); color:var(--white); padding:13px 30px; border-radius:7px; font-size:14px; font-weight:500; transition:background .3s; }
+.opinions-cta a:hover { background:var(--navy2); }
+
+/* DUDAS */
+#dudas { background:var(--white); }
+.dudas-list { display:flex; flex-direction:column; gap:16px; margin-top:10px; }
+.duda-card { border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--cream); transition:border-color .3s; }
+.duda-card:hover { border-color:var(--gold); }
+.duda-q { padding:20px 24px; font-size:14.5px; line-height:1.65; color:var(--text); font-weight:500; border-left:3px solid var(--gold); }
+.duda-a { padding:18px 24px; font-size:14px; line-height:1.7; color:var(--muted); background:var(--white); border-top:1px solid var(--border); }
+.duda-a strong { color:var(--navy); font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; display:block; margin-bottom:8px; }
+.dudas-cta { margin-top:28px; text-align:center; }
+.dudas-cta a { display:inline-flex; align-items:center; gap:8px; border:1.5px solid var(--navy); color:var(--navy); padding:12px 26px; border-radius:7px; font-size:14px; font-weight:500; transition:all .3s; }
+.dudas-cta a:hover { background:var(--navy); color:var(--white); }
+
 /* CONTACTO */
 #contacto { background:var(--navy); }
 .cgrid { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
@@ -208,15 +241,22 @@ footer { background:#111827; padding:40px 80px; }
   .sgrid{grid-template-columns:1fr;gap:40px} .spw{max-width:360px}
   .tcg{grid-template-columns:1fr 1fr} .pgrid{grid-template-columns:1fr}
   .cgrid{grid-template-columns:1fr;gap:40px} footer{padding:36px 40px}
+  .opinions-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
   nav{padding:0 20px} .nlinks{display:none} .ham{display:flex}
-  #hero{flex-direction:column} .hl{padding:48px 24px 40px}
-  .hr{width:100%;min-height:320px} .hstats{gap:24px;flex-wrap:wrap}
+  /* MOBILE: photo first, then text */
+  #hero{flex-direction:column-reverse}
+  .hl{padding:48px 24px 40px}
+  .hr{width:100%;min-height:340px;order:-1}
+  .hstats{gap:24px;flex-wrap:wrap}
   section{padding:60px 24px} .tcg{grid-template-columns:1fr}
   .cstrip{flex-direction:column;align-items:flex-start}
   .fcols{flex-direction:column;gap:28px} footer{padding:32px 24px}
   .ftop{flex-direction:column} .sbadge{display:none}
+  .opinions-grid{grid-template-columns:1fr}
+  .opinions-stats{gap:20px;padding:20px 24px}
+  .sgrid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -236,8 +276,9 @@ footer { background:#111827; padding:40px 80px; }
     <li><a href="#tcc">Terapia TCC</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#publicaciones">Publicaciones</a></li>
+    <li><a href="#opiniones">Opiniones</a></li>
     <li><a href="#contacto">Contacto</a></li>
-    <li><a href="https://wa.me/5554868712" target="_blank" class="nbtn">Agendar cita</a></li>
+    <li><a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank" class="nbtn">Agendar cita</a></li>
   </ul>
   <button class="ham" onclick="M()" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
@@ -247,8 +288,10 @@ footer { background:#111827; padding:40px 80px; }
   <a href="#servicios" onclick="M()">Servicios</a>
   <a href="#formacion" onclick="M()">Formación</a>
   <a href="#publicaciones" onclick="M()">Publicaciones</a>
+  <a href="#opiniones" onclick="M()">Opiniones</a>
   <a href="#contacto" onclick="M()">Contacto</a>
-  <a href="https://wa.me/5554868712" target="_blank" style="color:#25D366;border:none;font-weight:500">💬 WhatsApp — Agendar cita</a>
+  <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank" style="color:var(--navy);border:none;font-weight:500">📅 Agendar cita en Doctoralia</a>
+  <a href="https://wa.me/525548687128" target="_blank" style="color:#25D366;border:none;font-weight:500">💬 WhatsApp</a>
 </div>
 
 <!-- HERO -->
@@ -258,14 +301,14 @@ footer { background:#111827; padding:40px 80px; }
     <h1 class="hero-h au d2">Recupera tu<br><em>bienestar</em><br>emocional.</h1>
     <p class="hero-p au d3">Psiquiatra con Maestría en Terapia Cognitivo-Conductual. Un espacio seguro, profesional y sin juicios, con herramientas basadas en evidencia para tu vida diaria.</p>
     <div class="ha au d4">
-      <a href="https://wa.me/5554868712" target="_blank" class="bd">Agenda tu cita</a>
-      <a href="https://wa.me/5554868712" target="_blank" class="bo">
+      <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank" class="bd">Agenda tu cita</a>
+      <a href="https://wa.me/525548687128" target="_blank" class="bo">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
       </a>
     </div>
     <div class="hstats au d5">
-      <div class="hs"><div class="hsn">42</div><div class="hsl">opiniones verificadas</div></div>
+      <div class="hs"><div class="hsn">46</div><div class="hsl">opiniones verificadas</div></div>
       <div class="hs"><div class="hsn">10<sup>+</sup></div><div class="hsl">años de formación</div></div>
       <div class="hs"><div class="hsn">2</div><div class="hsl">especialidades</div></div>
     </div>
@@ -343,13 +386,15 @@ footer { background:#111827; padding:40px 80px; }
     </div>
   </div>
   <div class="cstrip rev">
-    <div><h3>¿Listo para dar el primer paso?</h3><p>Agenda en línea o escríbeme directamente por WhatsApp.</p></div>
+    <div><h3>¿Listo para dar el primer paso?</h3><p>Agenda en línea vía Doctoralia o escríbeme directamente por WhatsApp.</p></div>
     <div class="cstrip-btns">
-      <a href="https://wa.me/5554868712" target="_blank" class="bwapp">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank" class="bwapp">
+        📅 Agendar en Doctoralia
+      </a>
+      <a href="https://wa.me/525548687128" target="_blank" class="bghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
       </a>
-      <a href="mailto:asalazar961@gmail.com" class="bghost">✉️ Correo</a>
     </div>
   </div>
 </section>
@@ -441,22 +486,169 @@ footer { background:#111827; padding:40px 80px; }
   </div>
 </section>
 
+<!-- OPINIONES -->
+<section id="opiniones">
+  <div class="eyebrow rev">Doctoralia · Opiniones verificadas</div>
+  <h2 class="sh rev">Lo que dicen los pacientes</h2>
+  <div class="div rev"></div>
+
+  <div class="opinions-stats rev">
+    <div class="ostat">
+      <div class="ostat-n">46</div>
+      <div class="ostat-l">opiniones verificadas</div>
+    </div>
+    <div class="ostat-divider"></div>
+    <div class="ostat">
+      <div class="ostat-n">138</div>
+      <div class="ostat-l">dudas respondidas</div>
+    </div>
+    <div class="ostat-divider"></div>
+    <div class="ostat">
+      <div class="ostat-n">5★</div>
+      <div class="ostat-l">calificación promedio</div>
+    </div>
+  </div>
+
+  <div class="opinions-grid">
+    <div class="op-card rev">
+      <div class="op-stars">★★★★★</div>
+      <div class="op-text">"Extraordinaria experiencia con el Dr. Excelente trato, humano, logró enorme en medicación. Agradecida y contenta de haber caído en sus manos."</div>
+      <div class="op-meta">
+        <div class="op-name">Sharon M.</div>
+        <div class="op-type">Consultorio virtual (en línea)</div>
+        <div class="op-date">30 de marzo de 2026</div>
+        <div class="op-verified">✓ Cita verificada</div>
+      </div>
+    </div>
+    <div class="op-card rev">
+      <div class="op-stars">★★★★★</div>
+      <div class="op-text">"Es un excelente profesional, Dios lo bendiga, me ha salvado la vida."</div>
+      <div class="op-meta">
+        <div class="op-name">Luis Fernando P.</div>
+        <div class="op-type">Consultorio virtual · Consulta de seguimiento</div>
+        <div class="op-date">27 de marzo de 2026</div>
+        <div class="op-verified">✓ Cita verificada</div>
+      </div>
+    </div>
+    <div class="op-card rev">
+      <div class="op-stars">★★★★★</div>
+      <div class="op-text">"Es muy objetivo el tratamiento y la forma de abordar los conflictos."</div>
+      <div class="op-meta">
+        <div class="op-name">Jesús E.</div>
+        <div class="op-type">Consultorio · Consulta de seguimiento</div>
+        <div class="op-date">27 de marzo de 2026</div>
+        <div class="op-verified">✓ Cita verificada</div>
+      </div>
+    </div>
+    <div class="op-card rev">
+      <div class="op-stars">★★★★★</div>
+      <div class="op-text">"Una atención dedicada, especializada y con soluciones."</div>
+      <div class="op-meta">
+        <div class="op-name">Javier A.</div>
+        <div class="op-type">Consultorio · Consulta de seguimiento</div>
+        <div class="op-date">11 de marzo de 2026</div>
+        <div class="op-verified">✓ Cita verificada</div>
+      </div>
+    </div>
+    <div class="op-card rev">
+      <div class="op-stars">★★★★★</div>
+      <div class="op-text">"Las sesiones son excelentes. Tiene mucha paciencia y explica con detalle, te ofrece distintas opciones y recursos para trabajar."</div>
+      <div class="op-meta">
+        <div class="op-name">Pilar</div>
+        <div class="op-type">Consultorio virtual · Consulta en línea</div>
+        <div class="op-date">29 de enero de 2026</div>
+        <div class="op-verified">✓ Cita verificada</div>
+      </div>
+    </div>
+    <div class="op-card rev">
+      <div class="op-stars">★★★★★</div>
+      <div class="op-text">"Es una persona muy gentil y su trato es cordial y genera confianza. Es el mejor psiquiatra que me ha atendido. Mi enfermedad está muy bien controlada."</div>
+      <div class="op-meta">
+        <div class="op-name">Adriana E.</div>
+        <div class="op-type">Consultorio · Consulta de seguimiento</div>
+        <div class="op-date">26 de enero de 2026</div>
+        <div class="op-verified">✓ Cita verificada</div>
+      </div>
+    </div>
+  </div>
+  <div class="opinions-cta rev">
+    <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank">
+      Ver las 46 opiniones en Doctoralia →
+    </a>
+  </div>
+</section>
+
+<!-- DUDAS SOLUCIONADAS -->
+<section id="dudas">
+  <div class="eyebrow rev">Doctoralia · 138 dudas respondidas</div>
+  <h2 class="sh rev">Preguntas frecuentes de pacientes</h2>
+  <div class="div rev"></div>
+  <p class="sdesc rev" style="margin-bottom:40px">Algunas de las consultas respondidas públicamente en Doctoralia para orientar a quienes aún no se han decidido a dar el primer paso.</p>
+
+  <div class="dudas-list">
+    <div class="duda-card rev">
+      <div class="duda-q">¿Tomé 3 mg de clonazepam y además consumí cocaína. ¿Estoy en riesgo?</div>
+      <div class="duda-a">
+        <strong>Dr. Alejandro Salazar responde:</strong>
+        Sumando lo que mencionas (0.5 + 2 + 0.5 mg), serían 3 mg de clonazepam en total, que ya es una dosis alta para la mayoría de las personas, sobre todo si no hay una indicación muy específica. Combinar benzodiacepinas con estimulantes como la cocaína crea un riesgo real: la cocaína puede enmascarar los efectos sedantes del clonazepam y llevar a consumir más de lo que el cuerpo puede manejar. Si en algún momento sientes dificultad para respirar, confusión importante o pérdida de conciencia, es una emergencia médica. Si estás en un momento difícil y necesitas apoyo, no dudes en buscar ayuda profesional.
+      </div>
+    </div>
+    <div class="duda-card rev">
+      <div class="duda-q">Llevo tiempo tomando fluoxetina y me provoca mucho sueño por la tarde. ¿Es normal?</div>
+      <div class="duda-a">
+        <strong>Dr. Alejandro Salazar responde:</strong>
+        Lo que comentas sí puede pasar. Aunque la fluoxetina suele ser más bien activadora, en algunas personas produce somnolencia o sensación de cansancio, y a veces se nota más en un momento específico del día. Puede estar relacionado con el horario en que tomas el medicamento, la dosis, o la forma en que tu cuerpo lo metaboliza. Lo ideal sería comentarlo con el médico que te lo recetó para evaluar si conviene cambiar el horario de la toma o revisar la dosis.
+      </div>
+    </div>
+    <div class="duda-card rev">
+      <div class="duda-q">¿Cuál es la diferencia entre un psiquiatra y un psicólogo? ¿Cuándo debo ir con cada uno?</div>
+      <div class="duda-a">
+        <strong>Dr. Alejandro Salazar responde:</strong>
+        El psiquiatra es médico y puede prescribir medicamentos, hacer diagnósticos clínicos y también ofrecer psicoterapia si tiene formación en ella. El psicólogo se enfoca principalmente en psicoterapia y no prescribe medicación. En la práctica, ambos pueden trabajar juntos. Si hay síntomas que podrían requerir medicamento (depresión severa, ansiedad intensa, insomnio, TDAH, entre otros), lo más recomendable es comenzar con una valoración psiquiátrica. Si el malestar es más situacional o de crecimiento personal, un psicólogo puede ser el primer paso.
+      </div>
+    </div>
+    <div class="duda-card rev">
+      <div class="duda-q">¿Cuánto tiempo tarda en hacer efecto un antidepresivo?</div>
+      <div class="duda-a">
+        <strong>Dr. Alejandro Salazar responde:</strong>
+        La mayoría de los antidepresivos comienzan a mostrar efectos entre 2 y 4 semanas después de iniciar el tratamiento, aunque el efecto completo puede tardar entre 6 y 8 semanas. Es común que en las primeras semanas se noten primero cambios en el sueño o la energía antes de que mejore el estado de ánimo. Es importante no suspender el medicamento si no se ven resultados inmediatos, y mantener seguimiento con el médico para ajustar si es necesario.
+      </div>
+    </div>
+    <div class="duda-card rev">
+      <div class="duda-q">Tengo mucha ansiedad y no puedo dormir. ¿Puedo hacer algo sin medicamento?</div>
+      <div class="duda-a">
+        <strong>Dr. Alejandro Salazar responde:</strong>
+        Sí, hay mucho que se puede hacer. La Terapia Cognitivo-Conductual (TCC) tiene protocolos muy eficaces tanto para la ansiedad como para el insomnio (TCC-I). Técnicas de respiración diafragmática, higiene del sueño, activación conductual y exposición gradual son herramientas con respaldo científico sólido. Dicho eso, si la ansiedad es muy intensa o el insomnio lleva semanas afectando tu funcionamiento, una valoración psiquiátrica puede ayudar a determinar si el medicamento sería un apoyo en la etapa inicial del tratamiento.
+      </div>
+    </div>
+  </div>
+
+  <div class="dudas-cta rev">
+    <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank">
+      Ver todas las dudas respondidas en Doctoralia →
+    </a>
+  </div>
+</section>
+
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="cgrid">
     <div>
       <div class="eyebrow" style="color:var(--goldi)">Contacto</div>
       <h2 class="ch">Agenda tu<br>consulta</h2>
-      <p class="csub">Escríbeme por WhatsApp o correo para programar tu primera cita. Respondo en menos de 24 horas.</p>
+      <p class="csub">Escríbeme por WhatsApp, agenda directamente en Doctoralia o contáctame por correo. Respondo en menos de 24 horas.</p>
       <div class="citems">
-        <a href="https://wa.me/5554868712" target="_blank" class="ci">
+        <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank" class="ci">
+          <div class="cico">📅</div><div><div class="clabel">Agendar en línea</div><div class="cval">Doctoralia — Reserva confirmada al instante</div></div>
+        </a>
+        <a href="https://wa.me/525548687128" target="_blank" class="ci">
           <div class="cico">💬</div><div><div class="clabel">WhatsApp</div><div class="cval">+52 55 4868 7128</div></div>
         </a>
         <a href="mailto:asalazar961@gmail.com" class="ci">
           <div class="cico">✉️</div><div><div class="clabel">Correo electrónico</div><div class="cval">asalazar961@gmail.com</div></div>
         </a>
         <div class="ci">
-          <div class="cico">📍</div><div><div class="clabel">Dirección</div><div class="cval">Manuel López Cotilla 812, Del Valle Centro, CDMX</div></div>
+          <div class="cico">📍</div><div><div class="clabel">Consultorio</div><div class="cval">Manuel López Cotilla 812, Col. Del Valle Centro, CDMX 03100</div></div>
         </div>
         <a href="https://www.researchgate.net/profile/Alejandro-Salazar-Rodriguez" target="_blank" class="ci">
           <div class="cico">🔬</div><div><div class="clabel">ResearchGate</div><div class="cval">Alejandro-Salazar-Rodriguez</div></div>
@@ -466,9 +658,8 @@ footer { background:#111827; padding:40px 80px; }
     <div class="cright">
       <div class="ibox"><h3>¿Primera vez?</h3><p>Realizaremos una evaluación diagnóstica completa (~60 min). Te recomendamos llegar 10 minutos antes y traer cualquier expediente previo. La consulta es completamente confidencial.</p></div>
       <div class="ibox"><h3>English-speaking patients</h3><p>Full psychiatric consultation in English is available, both in-person and online. All documentation can be provided in English upon request. Videoconsultation available nationwide.</p></div>
-      <a href="https://wa.me/5554868712" target="_blank" class="wcta">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Contactar por WhatsApp
+      <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank" class="wcta">
+        📅 Agendar cita en Doctoralia
       </a>
     </div>
   </div>
@@ -495,7 +686,7 @@ footer { background:#111827; padding:40px 80px; }
         <span>+52 55 4868 7128</span>
         <span>asalazar961@gmail.com</span>
         <span>Manuel López Cotilla 812</span>
-        <span>Del Valle Centro, CDMX</span>
+        <span>Del Valle Centro, CDMX 03100</span>
       </div>
       <div class="fcol">
         <h4>Investigación</h4>
