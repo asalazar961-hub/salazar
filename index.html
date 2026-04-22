@@ -3,175 +3,519 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Alejandro Salazar Rodríguez — Psiquiatra & TCC · CDMX</title>
-<meta name="ext-resource-dependency" content="./assets/logo.png" data-resource-id="logoImg" />
-<meta name="ext-resource-dependency" content="./assets/fotoperfil.jpg" data-resource-id="fotoPerfilImg" />
-<template id="__bundler_thumbnail" data-bg-color="#F7F4EE">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <!-- Nav bar -->
-    <rect x="0" y="0" width="1200" height="72" fill="#F7F4EE"/>
-    <rect x="48" y="24" width="36" height="24" rx="4" fill="#1B2E5E" opacity="0.15"/>
-    <rect x="96" y="30" width="120" height="10" rx="3" fill="#1B2E5E" opacity="0.25"/>
-    <rect x="980" y="26" width="120" height="20" rx="5" fill="#1B2E5E"/>
-    <!-- Hero left -->
-    <rect x="48" y="120" width="60" height="8" rx="3" fill="#B8A882" opacity="0.8"/>
-    <rect x="48" y="148" width="440" height="52" rx="6" fill="#1B2E5E"/>
-    <rect x="48" y="212" width="380" height="52" rx="6" fill="#1B2E5E" opacity="0.7"/>
-    <rect x="48" y="276" width="300" height="52" rx="6" fill="#1B2E5E" opacity="0.5"/>
-    <rect x="48" y="360" width="420" height="24" rx="4" fill="#374151" opacity="0.3"/>
-    <rect x="48" y="394" width="380" height="24" rx="4" fill="#374151" opacity="0.2"/>
-    <rect x="48" y="460" width="160" height="44" rx="6" fill="#1B2E5E"/>
-    <rect x="224" y="460" width="140" height="44" rx="6" fill="none" stroke="#1B2E5E" stroke-width="2"/>
-    <!-- Hero right: photo placeholder -->
-    <rect x="600" y="72" width="600" height="728" fill="#D6D0C8"/>
-    <circle cx="900" cy="360" r="200" fill="#C4BDB4" opacity="0.5"/>
-    <!-- Stats -->
-    <rect x="48" y="560" width="60" height="36" rx="4" fill="#1B2E5E" opacity="0.8"/>
-    <rect x="128" y="560" width="60" height="36" rx="4" fill="#1B2E5E" opacity="0.8"/>
-    <rect x="208" y="560" width="60" height="36" rx="4" fill="#1B2E5E" opacity="0.8"/>
-  </svg>
-</template>
+<title>Dr. Alejandro Salazar Rodríguez — Psiquiatra &amp; TCC · CDMX</title>
+<meta name="description" content="Psiquiatra en CDMX con Maestría en Terapia Cognitivo-Conductual. Consulta presencial y en línea, en español e inglés. Cédula 15145882.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { background: #F7F4EE; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #F7F4EE; }
-  ::-webkit-scrollbar-thumb { background: #C9C3B8; border-radius: 3px; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+:root {
+  --cream:   #F5F0E8;
+  --cream2:  #EDE8DC;
+  --navy:    #1B2A52;
+  --navy2:   #2C3E6E;
+  --gold:    #B8A47A;
+  --goldi:   #D4C49A;
+  --text:    #2D3142;
+  --muted:   #6B7280;
+  --white:   #FFFFFF;
+  --border:  rgba(27,42,82,.1);
+  --fh:      'Playfair Display', Georgia, serif;
+  --fb:      'DM Sans', system-ui, sans-serif;
+  --ease:    cubic-bezier(.4,0,.2,1);
+}
+body { background:var(--cream); color:var(--text); font-family:var(--fb); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background:var(--cream); }
+::-webkit-scrollbar-thumb { background:var(--gold); border-radius:3px; }
+
+/* NAV */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  height:64px; display:flex; align-items:center; justify-content:space-between;
+  padding:0 52px;
+  background:rgba(245,240,232,.93); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .3s var(--ease);
+}
+nav.scrolled { box-shadow:0 2px 24px rgba(27,42,82,.1); }
+.nbrand { display:flex; align-items:center; gap:12px; }
+.nbrand img { height:36px; width:auto; }
+.nbrand-text { display:flex; flex-direction:column; line-height:1.2; }
+.nbrand-text strong { font-size:13.5px; font-weight:600; color:var(--navy); letter-spacing:.02em; }
+.nbrand-text span { font-size:11px; color:var(--gold); font-family:var(--fh); font-style:italic; }
+.nlinks { display:flex; align-items:center; gap:28px; list-style:none; }
+.nlinks a { font-size:13.5px; color:var(--muted); font-weight:400; transition:color .3s; }
+.nlinks a:hover { color:var(--navy); }
+.nbtn { background:var(--navy) !important; color:var(--white) !important; padding:9px 22px !important; border-radius:6px !important; font-weight:500 !important; font-size:13px !important; transition:background .3s !important; }
+.nbtn:hover { background:var(--navy2) !important; }
+.ham { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+.ham span { display:block; width:22px; height:2px; background:var(--navy); border-radius:2px; }
+.mob { display:none; position:fixed; top:64px; left:0; right:0; z-index:199; background:var(--cream); border-bottom:1px solid var(--border); padding:20px 24px 28px; flex-direction:column; gap:16px; }
+.mob.open { display:flex; }
+.mob a { font-size:16px; color:var(--navy); padding:10px 0; border-bottom:1px solid var(--border); }
+
+/* HERO */
+#hero { min-height:100vh; display:flex; align-items:stretch; padding-top:64px; }
+.hl { flex:1; display:flex; flex-direction:column; justify-content:center; padding:80px 64px 80px 80px; }
+.eyebrow { font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:30px; display:flex; align-items:center; gap:10px; }
+.eyebrow::before { content:''; display:block; width:22px; height:1.5px; background:var(--gold); }
+h1.hero-h { font-family:var(--fh); font-size:clamp(44px,5.5vw,70px); font-weight:400; line-height:1.08; color:var(--navy); margin-bottom:28px; }
+h1.hero-h em { font-style:italic; }
+.hero-p { font-size:17px; line-height:1.72; color:var(--muted); max-width:440px; margin-bottom:40px; }
+.ha { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:60px; }
+.bd { display:inline-flex; align-items:center; gap:8px; background:var(--navy); color:var(--white); padding:13px 28px; border-radius:7px; font-size:14px; font-weight:500; transition:background .3s; }
+.bd:hover { background:var(--navy2); }
+.bo { display:inline-flex; align-items:center; gap:8px; border:1.5px solid rgba(27,42,82,.3); color:var(--navy); padding:12px 24px; border-radius:7px; font-size:14px; font-weight:400; transition:all .3s; }
+.bo:hover { border-color:var(--navy); background:rgba(27,42,82,.04); }
+.hstats { display:flex; gap:40px; padding-top:36px; border-top:1px solid var(--border); }
+.hs { display:flex; flex-direction:column; gap:4px; }
+.hsn { font-family:var(--fh); font-size:36px; font-weight:400; color:var(--navy); line-height:1; }
+.hsn sup { font-size:20px; color:var(--gold); }
+.hsl { font-size:12px; color:var(--muted); }
+.hr { width:44%; position:relative; overflow:hidden; background:var(--cream2); }
+.hr img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+
+/* SECTION BASE */
+section { padding:100px 80px; }
+.sh { font-family:var(--fh); font-size:clamp(28px,3.2vw,46px); font-weight:400; color:var(--navy); margin-bottom:18px; line-height:1.18; }
+.sdesc { font-size:16.5px; line-height:1.7; color:var(--muted); max-width:560px; }
+.div { width:40px; height:2px; background:var(--gold); margin:16px 0 44px; }
+
+/* SOBRE */
+#sobre { background:var(--white); }
+.sgrid { display:grid; grid-template-columns:1.1fr 1fr; gap:72px; align-items:start; }
+.spw { position:relative; }
+.spw img { width:100%; border-radius:10px; object-fit:cover; aspect-ratio:3/4; }
+.sbadge { position:absolute; bottom:-20px; right:-20px; background:var(--navy); color:var(--white); border-radius:10px; padding:18px 22px; font-family:var(--fh); font-size:13px; line-height:1.4; box-shadow:0 12px 40px rgba(27,42,82,.22); }
+.sbadge strong { display:block; font-size:22px; font-weight:400; color:var(--goldi); }
+.sc { padding-top:12px; }
+.sc p { font-size:16px; line-height:1.78; color:var(--muted); margin-bottom:18px; }
+.ctag { display:inline-flex; align-items:center; gap:8px; background:var(--cream); border-radius:6px; padding:10px 16px; font-size:13px; color:var(--navy); border:1px solid var(--border); margin-bottom:32px; }
+.creds { display:flex; flex-direction:column; gap:12px; margin-top:32px; }
+.cred { display:flex; gap:14px; align-items:flex-start; padding:16px 18px; background:var(--cream); border-radius:8px; border-left:3px solid var(--gold); }
+.cred-ico { font-size:20px; flex-shrink:0; margin-top:1px; }
+.ct { font-size:13.5px; font-weight:600; color:var(--navy); display:block; margin-bottom:3px; }
+.cs { font-size:12.5px; color:var(--muted); }
+
+/* TCC */
+#tcc { background:var(--cream); }
+.tcg { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:10px; }
+.tcc-card { background:var(--white); border-radius:10px; border:1px solid var(--border); padding:28px 24px; transition:transform .3s var(--ease),box-shadow .3s var(--ease); position:relative; overflow:hidden; }
+.tcc-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--gold); transform:scaleX(0); transition:transform .3s var(--ease); transform-origin:left; }
+.tcc-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(27,42,82,.09); }
+.tcc-card:hover::after { transform:scaleX(1); }
+.tcc-ico { font-size:26px; margin-bottom:14px; }
+.tcc-t { font-family:var(--fh); font-size:17px; font-weight:500; color:var(--navy); margin-bottom:9px; }
+.tcc-p { font-size:13.5px; line-height:1.68; color:var(--muted); }
+
+/* SERVICIOS */
+#servicios { background:var(--white); }
+.pgrid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:10px; }
+.prow { display:flex; align-items:center; justify-content:space-between; padding:22px 26px; background:var(--cream); border-radius:10px; border:1px solid var(--border); transition:border-color .3s; }
+.prow:hover { border-color:var(--gold); }
+.prow.feat { background:var(--navy); border-color:var(--navy); }
+.pl { display:flex; flex-direction:column; gap:4px; }
+.pn { font-size:15px; font-weight:500; color:var(--navy); }
+.pnf { color:var(--white); }
+.ps { font-size:12.5px; color:var(--muted); }
+.psf { color:rgba(255,255,255,.55); }
+.pa { font-family:var(--fh); font-size:36px; font-weight:400; color:var(--navy); line-height:1; }
+.paf { color:var(--white); }
+.pmxn { font-size:12px; color:var(--muted); display:block; text-align:right; margin-top:2px; }
+.pmxnf { color:rgba(255,255,255,.45); }
+.cstrip { margin-top:28px; background:var(--navy); border-radius:10px; padding:32px 36px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; }
+.cstrip h3 { font-family:var(--fh); font-size:24px; font-weight:400; color:var(--white); }
+.cstrip p { font-size:14px; color:rgba(255,255,255,.55); margin-top:4px; }
+.cstrip-btns { display:flex; gap:12px; }
+.bwapp { display:inline-flex; align-items:center; gap:8px; background:#25D366; color:var(--white); padding:12px 24px; border-radius:7px; font-size:14px; font-weight:500; transition:background .3s; }
+.bwapp:hover { background:#1FAE55; }
+.bghost { display:inline-flex; align-items:center; gap:8px; border:1.5px solid rgba(255,255,255,.3); color:var(--white); padding:12px 22px; border-radius:7px; font-size:14px; font-weight:400; transition:border-color .3s; }
+.bghost:hover { border-color:rgba(255,255,255,.7); }
+
+/* FORMACIÓN */
+#formacion { background:var(--cream); }
+.tl { position:relative; margin-top:10px; }
+.tl::before { content:''; position:absolute; left:18px; top:0; bottom:0; width:2px; background:var(--border); }
+.tli { display:flex; gap:28px; padding-bottom:24px; }
+.tld { width:36px; height:36px; border-radius:50%; flex-shrink:0; background:var(--white); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:13px; position:relative; z-index:1; }
+.tlb { flex:1; background:var(--white); border-radius:8px; border:1px solid var(--border); padding:14px 18px; transition:border-color .3s; }
+.tlb:hover { border-color:var(--gold); }
+.tly { font-size:10.5px; font-weight:600; letter-spacing:.1em; color:var(--gold); text-transform:uppercase; margin-bottom:4px; }
+.tlt { font-size:13.5px; color:var(--text); line-height:1.5; }
+.tlbg { display:inline-block; margin-top:6px; font-size:10.5px; font-weight:600; color:var(--navy2); background:rgba(44,62,110,.08); padding:2px 9px; border-radius:50px; }
+
+/* PUBLICACIONES */
+#publicaciones { background:var(--white); }
+.plist { display:flex; flex-direction:column; gap:16px; margin-top:10px; }
+.pcard { display:flex; gap:20px; align-items:flex-start; padding:24px 26px; border-radius:10px; border:1px solid var(--border); background:var(--cream); transition:border-color .3s,box-shadow .3s; }
+.pcard:hover { border-color:var(--gold); box-shadow:0 4px 20px rgba(27,42,82,.06); }
+.pnum { font-family:var(--fh); font-size:28px; font-weight:400; color:var(--goldi); flex-shrink:0; width:28px; text-align:right; line-height:1; padding-top:4px; }
+.pbody { flex:1; }
+.pvenue { font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:7px; }
+.ptitle { font-family:var(--fh); font-size:16px; font-style:italic; font-weight:400; color:var(--navy); line-height:1.45; margin-bottom:7px; }
+.pauth { font-size:13px; color:var(--muted); margin-bottom:6px; }
+.pdoi { font-size:12px; color:var(--muted); }
+.pdoi a { color:var(--navy2); text-decoration:underline; }
+.rgbox { margin-top:36px; border:1px dashed var(--gold); border-radius:10px; padding:36px; text-align:center; background:var(--cream); }
+.rgbox p { font-size:15px; color:var(--muted); margin-bottom:20px; line-height:1.6; }
+.brg { display:inline-flex; align-items:center; gap:10px; background:#00CCBB; color:var(--white); padding:13px 30px; border-radius:7px; font-size:14px; font-weight:500; transition:background .3s,transform .3s; box-shadow:0 4px 16px rgba(0,204,187,.25); }
+.brg:hover { background:#00B5A5; transform:translateY(-2px); }
+
+/* CONTACTO */
+#contacto { background:var(--navy); }
+.cgrid { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+.ch { font-family:var(--fh); font-size:clamp(26px,3vw,42px); font-weight:400; color:var(--white); margin-bottom:16px; line-height:1.18; }
+.csub { font-size:16px; color:rgba(255,255,255,.55); margin-bottom:40px; line-height:1.65; }
+.citems { display:flex; flex-direction:column; gap:14px; }
+.ci { display:flex; gap:14px; align-items:center; padding:18px 20px; border-radius:8px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); transition:background .3s; }
+.ci:hover { background:rgba(255,255,255,.12); }
+.cico { width:40px; height:40px; border-radius:8px; flex-shrink:0; background:rgba(184,164,122,.18); display:flex; align-items:center; justify-content:center; font-size:18px; }
+.clabel { font-size:11px; color:rgba(255,255,255,.4); letter-spacing:.1em; text-transform:uppercase; }
+.cval { font-size:15px; color:var(--white); margin-top:2px; }
+.cright { display:flex; flex-direction:column; gap:18px; }
+.ibox { background:rgba(255,255,255,.07); border-radius:10px; padding:26px 28px; border:1px solid rgba(255,255,255,.1); }
+.ibox h3 { font-family:var(--fh); font-size:19px; font-weight:400; color:var(--white); margin-bottom:10px; }
+.ibox p { font-size:14px; color:rgba(255,255,255,.55); line-height:1.68; }
+.wcta { display:flex; align-items:center; justify-content:center; gap:12px; background:#25D366; color:var(--white); border-radius:10px; padding:20px; font-size:16px; font-weight:500; transition:background .3s,transform .3s; box-shadow:0 8px 24px rgba(37,211,102,.2); }
+.wcta:hover { background:#1FAE55; transform:translateY(-2px); }
+
+/* FOOTER */
+footer { background:#111827; padding:40px 80px; }
+.ftop { display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.08); margin-bottom:24px; }
+.fbrand img { height:34px; width:auto; filter:brightness(0) invert(.75); margin-bottom:12px; }
+.fbrand p { font-size:13px; color:rgba(255,255,255,.4); line-height:1.6; max-width:240px; }
+.fcols { display:flex; gap:56px; }
+.fcol h4 { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:14px; }
+.fcol a,.fcol span { display:block; font-size:13.5px; color:rgba(255,255,255,.55); margin-bottom:9px; transition:color .3s; }
+.fcol a:hover { color:var(--goldi); }
+.fbot { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+.fbot span { font-size:12.5px; color:rgba(255,255,255,.25); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)} }
+.au { animation:fadeUp .65s var(--ease) forwards; }
+.d1{animation-delay:.05s;opacity:0} .d2{animation-delay:.15s;opacity:0} .d3{animation-delay:.25s;opacity:0} .d4{animation-delay:.35s;opacity:0} .d5{animation-delay:.45s;opacity:0}
+.rev { opacity:0; transform:translateY(18px); transition:opacity .55s var(--ease),transform .55s var(--ease); }
+.rev.vis { opacity:1; transform:translateY(0); }
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  section{padding:72px 40px} nav{padding:0 32px} .hl{padding:60px 40px}
+  .sgrid{grid-template-columns:1fr;gap:40px} .spw{max-width:360px}
+  .tcg{grid-template-columns:1fr 1fr} .pgrid{grid-template-columns:1fr}
+  .cgrid{grid-template-columns:1fr;gap:40px} footer{padding:36px 40px}
+}
+@media(max-width:768px){
+  nav{padding:0 20px} .nlinks{display:none} .ham{display:flex}
+  #hero{flex-direction:column} .hl{padding:48px 24px 40px}
+  .hr{width:100%;min-height:320px} .hstats{gap:24px;flex-wrap:wrap}
+  section{padding:60px 24px} .tcg{grid-template-columns:1fr}
+  .cstrip{flex-direction:column;align-items:flex-start}
+  .fcols{flex-direction:column;gap:28px} footer{padding:32px 24px}
+  .ftop{flex-direction:column} .sbadge{display:none}
+}
 </style>
 </head>
 <body>
-<div id="root"></div>
 
-<script type="text/babel" src="Header.jsx"></script>
-<script type="text/babel" src="Sections.jsx"></script>
+<!-- NAV -->
+<nav id="N">
+  <a href="#" class="nbrand">
+    <img src="https://github.com/asalazar961-hub/salazar/blob/main/logo.png?raw=true" alt="Logo AS">
+    <div class="nbrand-text">
+      <strong>ALEJANDRO SALAZAR</strong>
+      <span>Psiquiatra · Maestro en TCC</span>
+    </div>
+  </a>
+  <ul class="nlinks">
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#tcc">Terapia TCC</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#publicaciones">Publicaciones</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://wa.me/5554868712" target="_blank" class="nbtn">Agendar cita</a></li>
+  </ul>
+  <button class="ham" onclick="M()" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="MM">
+  <a href="#sobre" onclick="M()">Sobre mí</a>
+  <a href="#tcc" onclick="M()">Terapia TCC</a>
+  <a href="#servicios" onclick="M()">Servicios</a>
+  <a href="#formacion" onclick="M()">Formación</a>
+  <a href="#publicaciones" onclick="M()">Publicaciones</a>
+  <a href="#contacto" onclick="M()">Contacto</a>
+  <a href="https://wa.me/5554868712" target="_blank" style="color:#25D366;border:none;font-weight:500">💬 WhatsApp — Agendar cita</a>
+</div>
 
-<script type="text/babel">
-const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "accentColor": "#1B2E5E",
-  "warmAccent": "#B8A882",
-  "heroLayout": "split",
-  "showPublications": false,
-  "ctaText": "Agenda tu cita"
-}/*EDITMODE-END*/;
+<!-- HERO -->
+<section id="hero">
+  <div class="hl">
+    <div class="eyebrow au d1">Ciudad de México · Consulta presencial y en línea</div>
+    <h1 class="hero-h au d2">Recupera tu<br><em>bienestar</em><br>emocional.</h1>
+    <p class="hero-p au d3">Psiquiatra con Maestría en Terapia Cognitivo-Conductual. Un espacio seguro, profesional y sin juicios, con herramientas basadas en evidencia para tu vida diaria.</p>
+    <div class="ha au d4">
+      <a href="https://wa.me/5554868712" target="_blank" class="bd">Agenda tu cita</a>
+      <a href="https://wa.me/5554868712" target="_blank" class="bo">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="hstats au d5">
+      <div class="hs"><div class="hsn">42</div><div class="hsl">opiniones verificadas</div></div>
+      <div class="hs"><div class="hsn">10<sup>+</sup></div><div class="hsl">años de formación</div></div>
+      <div class="hs"><div class="hsn">2</div><div class="hsl">especialidades</div></div>
+    </div>
+  </div>
+  <div class="hr">
+    <img src="https://github.com/asalazar961-hub/salazar/blob/main/fotoperfil.jpg?raw=true"
+         alt="Dr. Alejandro Salazar Rodríguez"
+         onerror="this.src='https://github.com/asalazar961-hub/salazar/blob/main/fotoperfil.jpeg?raw=true'">
+  </div>
+</section>
 
-function App() {
-  const [tweaks, setTweaks] = React.useState(TWEAK_DEFAULTS);
-  const [showTweaks, setShowTweaks] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState('hero');
+<!-- SOBRE MÍ -->
+<section id="sobre">
+  <div class="sgrid">
+    <div class="spw rev">
+      <img src="https://github.com/asalazar961-hub/salazar/blob/main/fotoperfil.jpeg?raw=true" alt="Dr. Alejandro Salazar">
+      <div class="sbadge"><strong>15145882</strong>Cédula profesional UNAM<br><span style="font-size:11px;opacity:.7">12195155 · Especialidad</span></div>
+    </div>
+    <div class="sc rev">
+      <div class="eyebrow">Sobre el doctor</div>
+      <h2 class="sh">Formación &amp; Trayectoria</h2>
+      <div class="div"></div>
+      <span class="ctag">🎓 Cédula: 15145882 / 12195155</span>
+      <p>Soy médico psiquiatra con Maestría en Terapia Cognitivo-Conductual, graduado y especializado en instituciones de salud de alto nivel en la Ciudad de México. Cuento con experiencia en psiquiatría de enlace, urgencias psiquiátricas, psiquiatría infantil y del adolescente, y cuidados paliativos.</p>
+      <p>Mi práctica integra la evaluación diagnóstica rigurosa con el tratamiento farmacológico actualizado y psicoterapia basada en evidencia: TCC y terapias contextuales de tercera generación (ACT). Atiendo en español e inglés, de forma presencial y en línea.</p>
+      <p>Participo activamente en investigación clínica con publicaciones en revistas indexadas europeas y presentaciones en congresos internacionales de trasplantes y psiquiatría.</p>
+      <div class="creds">
+        <div class="cred rev"><div class="cred-ico">🏥</div><div><span class="ct">Psiquiatría de Enlace</span><span class="cs">Hospital General de México · CMN 20 de Noviembre ISSSTE</span></div></div>
+        <div class="cred rev"><div class="cred-ico">🧠</div><div><span class="ct">Terapia Cognitivo Conductual &amp; ACT</span><span class="cs">Maestría en TCC · Diplomado en Terapias Contextuales de 3ª Generación</span></div></div>
+        <div class="cred rev"><div class="cred-ico">👶</div><div><span class="ct">Psiquiatría Infantil y del Adolescente</span><span class="cs">Formación especializada · CMN 20 de Noviembre ISSSTE</span></div></div>
+        <div class="cred rev"><div class="cred-ico">🌐</div><div><span class="ct">Bilingüe · English Consultation Available</span><span class="cs">Atención psiquiátrica en español e inglés</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  // Tweaks protocol
-  React.useEffect(() => {
-    window.addEventListener('message', e => {
-      if (e.data?.type === '__activate_edit_mode')   setShowTweaks(true);
-      if (e.data?.type === '__deactivate_edit_mode') setShowTweaks(false);
-    });
-    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
-  }, []);
+<!-- TCC -->
+<section id="tcc">
+  <div class="eyebrow rev">Mi enfoque terapéutico</div>
+  <h2 class="sh rev">Tratamiento basado en evidencia</h2>
+  <div class="div rev"></div>
+  <p class="sdesc rev" style="margin-bottom:48px">Integro lo mejor de la psiquiatría biológica con las psicoterapias más efectivas y validadas científicamente para una atención completa y personalizada.</p>
+  <div class="tcg">
+    <div class="tcc-card rev"><div class="tcc-ico">💊</div><h3 class="tcc-t">Psiquiatría Farmacológica</h3><p class="tcc-p">Diagnóstico riguroso y prescripción actualizada según guías internacionales. Manejo de depresión, ansiedad, TDAH, trastornos del sueño y psicosis.</p></div>
+    <div class="tcc-card rev"><div class="tcc-ico">🧩</div><h3 class="tcc-t">Terapia Cognitivo Conductual</h3><p class="tcc-p">Técnicas estructuradas para modificar patrones de pensamiento y conducta. Eficaz en ansiedad, depresión, fobias, TOC y trastornos alimentarios.</p></div>
+    <div class="tcc-card rev"><div class="tcc-ico">🌱</div><h3 class="tcc-t">ACT — Aceptación y Compromiso</h3><p class="tcc-p">Terapia contextual de 3ª generación que desarrolla flexibilidad psicológica, aceptación y valores personales. Muy eficaz en dolor crónico y enfermedad médica.</p></div>
+    <div class="tcc-card rev"><div class="tcc-ico">🔗</div><h3 class="tcc-t">Psiquiatría de Enlace</h3><p class="tcc-p">Atención en enfermedades médicas complejas, delirium, hospitalización y la interfaz mente-cuerpo en contextos médicos generales.</p></div>
+    <div class="tcc-card rev"><div class="tcc-ico">🫂</div><h3 class="tcc-t">Salud Mental Comunitaria</h3><p class="tcc-p">Formado en intervención mhGAP (OMS/OPS). Enfoque integral al contexto social, familiar y cultural del paciente en cada etapa del tratamiento.</p></div>
+    <div class="tcc-card rev"><div class="tcc-ico">🕊️</div><h3 class="tcc-t">Cuidados Paliativos</h3><p class="tcc-p">Acompañamiento psiquiátrico en enfermedad crónica avanzada y manejo del sufrimiento emocional en el paciente y su familia.</p></div>
+  </div>
+</section>
 
-  // Restore scroll position
-  React.useEffect(() => {
-    const saved = localStorage.getItem('salazar-scroll');
-    if (saved) window.scrollTo(0, parseInt(saved));
-    const onScroll = () => localStorage.setItem('salazar-scroll', window.scrollY);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="eyebrow rev">Honorarios</div>
+  <h2 class="sh rev">Consulta privada en CDMX</h2>
+  <div class="div rev"></div>
+  <p class="sdesc rev" style="margin-bottom:40px">Precios transparentes. Consulta presencial en Del Valle Centro y videoconsulta disponible para todo México.</p>
+  <div class="pgrid">
+    <div class="prow feat rev">
+      <div class="pl"><span class="pn pnf">Primera consulta</span><span class="ps psf">Evaluación diagnóstica completa · ~60 min</span></div>
+      <div style="text-align:right"><div class="pa paf">$2,300</div><span class="pmxn pmxnf">MXN</span></div>
+    </div>
+    <div class="prow rev">
+      <div class="pl"><span class="pn">Consulta de seguimiento</span><span class="ps">Revisión y ajuste de tratamiento · ~30–45 min</span></div>
+      <div style="text-align:right"><div class="pa">$1,500</div><span class="pmxn">MXN</span></div>
+    </div>
+    <div class="prow rev">
+      <div class="pl"><span class="pn">Consulta en inglés</span><span class="ps">English psychiatric consultation · ~60 min</span></div>
+      <div style="text-align:right"><div class="pa">$2,500</div><span class="pmxn">MXN</span></div>
+    </div>
+    <div class="prow rev">
+      <div class="pl"><span class="pn">Certificado de mascota (ESA)</span><span class="ps">Animal de apoyo emocional · con valoración psiquiátrica</span></div>
+      <div style="text-align:right"><div class="pa">$3,500</div><span class="pmxn">MXN</span></div>
+    </div>
+  </div>
+  <div class="cstrip rev">
+    <div><h3>¿Listo para dar el primer paso?</h3><p>Agenda en línea o escríbeme directamente por WhatsApp.</p></div>
+    <div class="cstrip-btns">
+      <a href="https://wa.me/5554868712" target="_blank" class="bwapp">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="mailto:asalazar961@gmail.com" class="bghost">✉️ Correo</a>
+    </div>
+  </div>
+</section>
 
-  // Active section tracking
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) setActiveSection(e.target.id); });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
+<!-- FORMACIÓN -->
+<section id="formacion">
+  <div class="eyebrow rev">Formación académica</div>
+  <h2 class="sh rev">Cursos, Diplomados &amp; Congresos</h2>
+  <div class="div rev"></div>
+  <p class="sdesc rev" style="margin-bottom:48px">Más de 30 actividades de formación continua en instituciones de primer nivel nacional e internacional.</p>
+  <div class="tl">
+    <div class="tli rev"><div class="tld">🔬</div><div class="tlb"><div class="tly">2015</div><div class="tlt">Congreso Internacional de Inmuno-Oncología · Instituto Nacional de Cancerología (INCan)</div></div></div>
+    <div class="tli rev"><div class="tld">🩸</div><div class="tlb"><div class="tly">2015</div><div class="tlt">Simposio VIH: El Camino Hacia la Cura · Facultad de Medicina UNAM</div></div></div>
+    <div class="tli rev"><div class="tld">🫀</div><div class="tlb"><div class="tly">2019</div><div class="tlt">Diplomado para Coordinadores Hospitalarios de Donación de Órganos y Tejidos · Facultad de Medicina UNAM</div></div></div>
+    <div class="tli rev"><div class="tld">🏛️</div><div class="tlb"><div class="tly">2019</div><div class="tlt">Foro: Transformación del Sistema Nacional de Donación y Trasplante · Congreso de la Unión, CDMX</div></div></div>
+    <div class="tli rev"><div class="tld">👁️</div><div class="tlb"><div class="tly">2019</div><div class="tlt">IX Taller de Procuración de Tejidos Córnea con Fines de Trasplante · Hospital General de México Eduardo Liceaga</div></div></div>
+    <div class="tli rev"><div class="tld">🌎</div><div class="tlb"><div class="tly">2019</div><div class="tlt">4° Simposio de Donación y Trasplantes de Institutos Nacionales · Instituto Nacional de Nutrición Salvador Zubirán</div></div></div>
+    <div class="tli rev"><div class="tld">🕊️</div><div class="tlb"><div class="tly">2019</div><div class="tlt">Simposio Cuidados Paliativos en Pacientes con Enfermedad Crónica · Hospital General de México Dr. Eduardo Liceaga</div></div></div>
+    <div class="tli rev"><div class="tld">🌍</div><div class="tlb"><div class="tly">2019</div><div class="tlt">XXV Congreso Latinoamericano y del Caribe de Trasplantes</div></div></div>
+    <div class="tli rev"><div class="tld">📊</div><div class="tlb"><div class="tly">2019–2020</div><div class="tlt">Curso Básico de Metodología para la Investigación · Facultad de Medicina UNAM</div></div></div>
+    <div class="tli rev"><div class="tld">🧘</div><div class="tlb"><div class="tly">2021</div><div class="tlt">Entrenamiento en Habilidades Clínicas del Modelo Contextual ATC (Acceptance and Commitment Therapy)</div></div></div>
+    <div class="tli rev"><div class="tld">🚨</div><div class="tlb"><div class="tly">2021</div><div class="tlt">Manejo Básico del Paciente Agitado · CMN 20 de Noviembre ISSSTE</div></div></div>
+    <div class="tli rev"><div class="tld">🌐</div><div class="tlb"><div class="tly">2021</div><div class="tlt">Guía de Intervención mhGAP · Secretaría de Gestión Integral de Riesgos y Protección Civil (OPS/OMS)</div></div></div>
+    <div class="tli rev"><div class="tld">🆘</div><div class="tlb"><div class="tly">2021</div><div class="tlt">Manejo Integral de Urgencias en Salud Mental · ISSSTE</div></div></div>
+    <div class="tli rev"><div class="tld">🔭</div><div class="tlb"><div class="tly">2021</div><div class="tlt">Metodología de la Investigación Aplicado a Ciencias de la Salud · CMN 20 de Noviembre ISSSTE</div></div></div>
+    <div class="tli rev"><div class="tld">🧪</div><div class="tlb"><div class="tly">2022</div><div class="tlt">Manejo de la Depresión Aplicando la TCC · Centro Especializado en Trastornos Ansiosos, Depresivos y de la Personalidad</div></div></div>
+    <div class="tli rev"><div class="tld">🍽️</div><div class="tlb"><div class="tly">2022</div><div class="tlt">1er Congreso Internacional de Trastornos de la Conducta Alimentaria</div></div></div>
+    <div class="tli rev"><div class="tld">📚</div><div class="tlb"><div class="tly">2022–2023</div><div class="tlt">Diplomado en Terapias Contextuales de Tercera Generación · Universidad CEUSS</div></div></div>
+    <div class="tli rev"><div class="tld">👦</div><div class="tlb"><div class="tly">2022</div><div class="tlt">XXV Curso Monográfico de Psiquiatría Infantil y de la Adolescencia · CMN 20 de Noviembre ISSSTE</div></div></div>
+    <div class="tli rev"><div class="tld">🧬</div><div class="tlb"><div class="tly">2022</div><div class="tlt">Introducción a la Neurociencia Cognitiva · Hospital Psiquiátrico Fray Bernardino Álvarez</div></div></div>
+    <div class="tli rev"><div class="tld">🔗</div><div class="tlb"><div class="tly">2022</div><div class="tlt">Curso Monográfico en Psiquiatría de Enlace · CMN 20 de Noviembre ISSSTE</div></div></div>
+    <div class="tli rev"><div class="tld">🦠</div><div class="tlb"><div class="tly">2023</div><div class="tlt">Resistencia Antimicrobiana para el Primer Nivel de Atención (RAM) · Secretaría de Salud</div></div></div>
+    <div class="tli rev"><div class="tld">🎙️</div><div class="tlb"><div class="tly">2023</div><div class="tlt">Tópicos de Psicofarmacología Infantil · CMN 20 de Noviembre ISSSTE <span class="tlbg">Ponente invitado</span></div></div></div>
+    <div class="tli rev"><div class="tld">📋</div><div class="tlb"><div class="tly">2023</div><div class="tlt">Correcto Llenado del Certificado de Defunción · Organización Panamericana de la Salud (OPS)</div></div></div>
+    <div class="tli rev"><div class="tld">🔗</div><div class="tlb"><div class="tly">2023</div><div class="tlt">Psiquiatría de Enlace: Puentes entre la Mente y la Medicina · CMN 20 de Noviembre ISSSTE</div></div></div>
+    <div class="tli rev"><div class="tld">⚡</div><div class="tlb"><div class="tly">2024</div><div class="tlt">First VNS Academic Workshop · Instituto Nacional de Neurología y Neurocirugía Manuel Velasco Suárez (INNN)</div></div></div>
+    <div class="tli rev"><div class="tld">🎙️</div><div class="tlb"><div class="tly">2024</div><div class="tlt">Más Allá del TDAH: Actualidades y Desafíos · CMN 20 de Noviembre ISSSTE <span class="tlbg">Ponente invitado</span></div></div></div>
+  </div>
+</section>
 
-  function applyTweak(key, val) {
-    const next = { ...tweaks, [key]: val };
-    setTweaks(next);
-    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: val } }, '*');
-  }
+<!-- PUBLICACIONES -->
+<section id="publicaciones">
+  <div class="eyebrow rev">Investigación científica</div>
+  <h2 class="sh rev">Publicaciones &amp; Trabajos</h2>
+  <div class="div rev"></div>
+  <p class="sdesc rev" style="margin-bottom:40px">Participación activa en investigación clínica con publicaciones en revistas europeas indexadas y congresos internacionales.</p>
+  <div class="plist">
+    <div class="pcard rev">
+      <div class="pnum">1</div>
+      <div class="pbody">
+        <div class="pvenue">European Psychiatry · 2024</div>
+        <div class="ptitle">Socio-demographic characteristics and pharmacological treatment options in patients with delirium</div>
+        <div class="pauth">Cruz Aviña FJ, Salazar Rodriguez A, Sanchez DNM, et al.</div>
+        <div class="pdoi">European Psychiatry. 2024;67(S1):S368–S369 &nbsp;·&nbsp; <a href="https://doi.org/10.1192/j.eurpsy.2024.757" target="_blank">doi:10.1192/j.eurpsy.2024.757</a></div>
+      </div>
+    </div>
+    <div class="pcard rev">
+      <div class="pnum">2</div>
+      <div class="pbody">
+        <div class="pvenue">ResearchGate · 2023</div>
+        <div class="ptitle">Características sociodemográficas y opciones de tratamiento farmacológico en pacientes con delirium</div>
+        <div class="pauth">Moya Sánchez D, Cruz-Aviña FJ, Carmona-Herrera D, Salazar-Rodríguez A, Luna O, Núñez Pichardo SV, Ochoa-Madrigal M.</div>
+        <div class="pdoi"><a href="https://doi.org/10.17613/ya3j-kq10" target="_blank">doi:10.17613/ya3j-kq10</a></div>
+      </div>
+    </div>
+    <div class="pcard rev">
+      <div class="pnum">3</div>
+      <div class="pbody">
+        <div class="pvenue">XXV Congreso Latinoamericano y del Caribe de Trasplantes · 2019</div>
+        <div class="ptitle">Concordancia entre el diagnóstico definitivo y clínico de choque séptico en potenciales donadores de tejido corneal en el Hospital General de México</div>
+        <div class="pauth">Morales Navarro J, Rios Brito K, Rodríguez Reséndiz P, Solís Rojas C, Salazar Rodríguez A, García Covarrubias A.</div>
+      </div>
+    </div>
+    <div class="pcard rev">
+      <div class="pnum">4</div>
+      <div class="pbody">
+        <div class="pvenue">XXV Congreso Latinoamericano y del Caribe de Trasplantes · 2019</div>
+        <div class="ptitle">¿Se pierden los posibles donantes de órganos en la sala de urgencias del Hospital General de México Dr. Eduardo Liceaga?</div>
+        <div class="pauth">Solís Rojas C, Rios Brito K, Rodríguez Reséndiz P, Salazar Rodríguez A, Morales Navarro J, Garcia Covarrubias L.</div>
+      </div>
+    </div>
+  </div>
+  <div class="rgbox rev">
+    <p>Consulta el perfil académico completo, citas, métricas de investigación y trabajos en ResearchGate.</p>
+    <a href="https://www.researchgate.net/profile/Alejandro-Salazar-Rodriguez" target="_blank" rel="noopener" class="brg">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><rect width="20" height="20" rx="4" fill="white" opacity=".2"/><text x="3" y="15" font-size="11" font-weight="bold" font-family="Arial" fill="white">RG</text></svg>
+      Ver perfil completo en ResearchGate
+    </a>
+  </div>
+</section>
 
-  return (
-    <>
-      <Nav activeSection={activeSection} />
-      <main>
-        <Hero />
-        <AboutSection />
-        <TCCSection />
-        <ServicesSection />
-        <TestimonialsSection />
-        <ContactSection />
-      </main>
-      <Footer />
-
-      {/* Tweaks Panel */}
-      {showTweaks && (
-        <div style={{
-          position: 'fixed', bottom: 24, right: 24, width: 280,
-          background: 'white', borderRadius: 16, boxShadow: '0 8px 48px rgba(0,0,0,0.15)',
-          padding: '20px', zIndex: 9999, fontFamily: 'DM Sans, sans-serif'
-        }}>
-          <div style={{ fontWeight: 600, fontSize: 14, color: '#1B2E5E', marginBottom: 16 }}>Tweaks</div>
-
-          <div style={{ marginBottom: 14 }}>
-            <label style={{ fontSize: 12, color: '#6B7280', display: 'block', marginBottom: 6 }}>Color principal</label>
-            <div style={{ display: 'flex', gap: 8 }}>
-              {['#1B2E5E','#2C4A7C','#1A3D36','#3D1A36'].map(c => (
-                <div key={c} onClick={() => applyTweak('accentColor', c)} style={{
-                  width: 28, height: 28, background: c, borderRadius: 6, cursor: 'pointer',
-                  border: tweaks.accentColor === c ? '2px solid #B8A882' : '2px solid transparent'
-                }} />
-              ))}
-            </div>
-          </div>
-
-          <div style={{ marginBottom: 14 }}>
-            <label style={{ fontSize: 12, color: '#6B7280', display: 'block', marginBottom: 6 }}>Acento cálido</label>
-            <div style={{ display: 'flex', gap: 8 }}>
-              {['#B8A882','#C9A96E','#A89070','#8FA89A'].map(c => (
-                <div key={c} onClick={() => applyTweak('warmAccent', c)} style={{
-                  width: 28, height: 28, background: c, borderRadius: 6, cursor: 'pointer',
-                  border: tweaks.warmAccent === c ? '2px solid #1B2E5E' : '2px solid transparent'
-                }} />
-              ))}
-            </div>
-          </div>
-
-          <div style={{ marginBottom: 14 }}>
-            <label style={{ fontSize: 12, color: '#6B7280', display: 'block', marginBottom: 6 }}>Texto CTA principal</label>
-            <input value={tweaks.ctaText} onChange={e => applyTweak('ctaText', e.target.value)}
-              style={{ width: '100%', padding: '7px 10px', borderRadius: 6, border: '1px solid #E2DDD4', fontSize: 13, fontFamily: 'DM Sans, sans-serif', color: '#1B2E5E', outline: 'none' }} />
-          </div>
-
-          <div>
-            <label style={{ fontSize: 12, color: '#6B7280', display: 'block', marginBottom: 6 }}>Publicaciones</label>
-            <div style={{ display: 'flex', gap: 8 }}>
-              {[['Mostrar', true],['Ocultar', false]].map(([l, v]) => (
-                <button key={l} onClick={() => applyTweak('showPublications', v)} style={{
-                  flex: 1, padding: '6px', borderRadius: 6, border: '1.5px solid',
-                  borderColor: tweaks.showPublications === v ? '#1B2E5E' : '#E2DDD4',
-                  background: tweaks.showPublications === v ? '#1B2E5E' : 'white',
-                  color: tweaks.showPublications === v ? 'white' : '#6B7280',
-                  fontSize: 12, cursor: 'pointer', fontFamily: 'DM Sans, sans-serif'
-                }}>{l}</button>
-              ))}
-            </div>
-          </div>
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="cgrid">
+    <div>
+      <div class="eyebrow" style="color:var(--goldi)">Contacto</div>
+      <h2 class="ch">Agenda tu<br>consulta</h2>
+      <p class="csub">Escríbeme por WhatsApp o correo para programar tu primera cita. Respondo en menos de 24 horas.</p>
+      <div class="citems">
+        <a href="https://wa.me/5554868712" target="_blank" class="ci">
+          <div class="cico">💬</div><div><div class="clabel">WhatsApp</div><div class="cval">+52 55 4868 7128</div></div>
+        </a>
+        <a href="mailto:asalazar961@gmail.com" class="ci">
+          <div class="cico">✉️</div><div><div class="clabel">Correo electrónico</div><div class="cval">asalazar961@gmail.com</div></div>
+        </a>
+        <div class="ci">
+          <div class="cico">📍</div><div><div class="clabel">Dirección</div><div class="cval">Manuel López Cotilla 812, Del Valle Centro, CDMX</div></div>
         </div>
-      )}
-    </>
-  );
-}
+        <a href="https://www.researchgate.net/profile/Alejandro-Salazar-Rodriguez" target="_blank" class="ci">
+          <div class="cico">🔬</div><div><div class="clabel">ResearchGate</div><div class="cval">Alejandro-Salazar-Rodriguez</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="cright">
+      <div class="ibox"><h3>¿Primera vez?</h3><p>Realizaremos una evaluación diagnóstica completa (~60 min). Te recomendamos llegar 10 minutos antes y traer cualquier expediente previo. La consulta es completamente confidencial.</p></div>
+      <div class="ibox"><h3>English-speaking patients</h3><p>Full psychiatric consultation in English is available, both in-person and online. All documentation can be provided in English upon request. Videoconsultation available nationwide.</p></div>
+      <a href="https://wa.me/5554868712" target="_blank" class="wcta">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+<!-- FOOTER -->
+<footer>
+  <div class="ftop">
+    <div class="fbrand">
+      <img src="https://github.com/asalazar961-hub/salazar/blob/main/logo.png?raw=true" alt="Logo">
+      <p>Dr. Alejandro Salazar Rodríguez<br>Médico Psiquiatra · Maestro en TCC<br>Cédula: 15145882 / 12195155</p>
+    </div>
+    <div class="fcols">
+      <div class="fcol">
+        <h4>Servicios</h4>
+        <a href="#tcc">Terapia TCC</a>
+        <a href="#servicios">Primera consulta</a>
+        <a href="#servicios">Seguimiento</a>
+        <a href="#servicios">Consulta en inglés</a>
+        <a href="#servicios">Certificado ESA</a>
+      </div>
+      <div class="fcol">
+        <h4>Contacto</h4>
+        <span>+52 55 4868 7128</span>
+        <span>asalazar961@gmail.com</span>
+        <span>Manuel López Cotilla 812</span>
+        <span>Del Valle Centro, CDMX</span>
+      </div>
+      <div class="fcol">
+        <h4>Investigación</h4>
+        <a href="https://www.researchgate.net/profile/Alejandro-Salazar-Rodriguez" target="_blank">ResearchGate</a>
+        <a href="#publicaciones">Publicaciones</a>
+        <a href="#formacion">Formación</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Dr. Alejandro Salazar Rodríguez. Todos los derechos reservados.</span>
+    <span>Psiquiatría · TCC · CDMX</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{ document.getElementById('N').classList.toggle('scrolled',scrollY>20); });
+function M(){ document.getElementById('MM').classList.toggle('open'); }
+const obs = new IntersectionObserver(e=>e.forEach(x=>{ if(x.isIntersecting) x.target.classList.add('vis'); }),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
