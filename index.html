@@ -312,6 +312,7 @@ footer { background:#111827; padding:40px 80px; }
     <li><a href="#tcc">Terapia TCC</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#publicaciones">Publicaciones</a></li>
+    <li><a href="#trastornos">Lo que trato</a></li>
     <li><a href="#opiniones">Opiniones</a></li>
     <li><a href="#contacto">Contacto</a></li>
     <li><a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank" class="nbtn">Agendar cita</a></li>
@@ -324,6 +325,7 @@ footer { background:#111827; padding:40px 80px; }
   <a href="#servicios" onclick="M()">Servicios</a>
   <a href="#formacion" onclick="M()">Formación</a>
   <a href="#publicaciones" onclick="M()">Publicaciones</a>
+  <a href="#trastornos" onclick="M()">Lo que trato</a>
   <a href="#opiniones" onclick="M()">Opiniones</a>
   <a href="#contacto" onclick="M()">Contacto</a>
   <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank" style="color:var(--navy);border:none;font-weight:500">📅 Agendar cita en Doctoralia</a>
@@ -613,6 +615,217 @@ footer { background:#111827; padding:40px 80px; }
     </a>
   </div>
 </section>
+
+
+<!-- LO QUE TRATO -->
+<style>
+#trastornos { background: var(--white, #fff); padding: 80px 20px; }
+.tr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; max-width: 860px; margin: 0 auto 48px; }
+.tr-chip { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 22px 16px; background: var(--cream, #f9f7f3); border: 2px solid transparent; border-radius: 14px; cursor: pointer; transition: all .25s; text-align: center; }
+.tr-chip:hover { border-color: var(--navy, #1a2e4a); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,46,74,0.10); }
+.tr-chip.active { border-color: var(--gold, #c49e60); background: var(--navy, #1a2e4a); }
+.tr-chip.active .tr-chip-icon { filter: brightness(10); }
+.tr-chip.active .tr-chip-label { color: #fff; }
+.tr-chip-icon { font-size: 32px; line-height: 1; }
+.tr-chip-label { font-size: 13px; font-weight: 600; color: var(--navy, #1a2e4a); line-height: 1.3; }
+.tr-panel { display: none; max-width: 780px; margin: 0 auto; background: var(--cream, #f9f7f3); border-radius: 16px; padding: 40px 44px; animation: fadeUp .3s ease; }
+.tr-panel.visible { display: block; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.tr-panel h3 { font-size: 22px; font-weight: 700; color: var(--navy, #1a2e4a); margin: 0 0 20px; }
+.tr-panel p { font-size: 15px; line-height: 1.75; color: var(--text, #333); margin: 0 0 14px; }
+.tr-cuando { margin-top: 24px; padding: 22px 26px; border-radius: 10px; background: rgba(26,46,74,0.06); border-left: 3px solid var(--navy, #1a2e4a); }
+.tr-tto { margin-top: 16px; padding: 22px 26px; border-radius: 10px; background: rgba(196,158,96,0.10); border-left: 3px solid var(--gold, #c49e60); }
+.tr-cuando strong, .tr-tto strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy, #1a2e4a); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+.tr-cuando p, .tr-tto p { font-size: 14px; line-height: 1.7; margin: 0 0 10px; }
+.tr-cuando p:last-child, .tr-tto p:last-child { margin: 0; }
+.tr-close { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 28px; background: none; border: 1.5px solid var(--navy, #1a2e4a); border-radius: 8px; padding: 10px 20px; font-size: 13px; color: var(--navy, #1a2e4a); cursor: pointer; transition: all .2s; width: 100%; }
+.tr-close:hover { background: var(--navy, #1a2e4a); color: #fff; }
+@media (max-width: 600px) { .tr-panel { padding: 26px 20px; } .tr-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+
+<section id="trastornos">
+  <div class="eyebrow">Salud mental · Información para pacientes</div>
+  <h2 class="sh">Lo que trato y cómo se vive</h2>
+  <div class="div"></div>
+  <p class="sdesc" style="margin-bottom:40px;max-width:660px;margin-left:auto;margin-right:auto;text-align:center;">La mayoría de las personas que llegan a consulta no llegan diciendo "tengo depresión" o "tengo ansiedad". Llegan cansadas, confundidas, sintiéndose mal sin saber por qué. Selecciona lo que más resuene contigo.</p>
+
+  <div class="tr-grid">
+    <div class="tr-chip" onclick="trOpen('depresion',this)">
+      <span class="tr-chip-icon">🌧️</span>
+      <span class="tr-chip-label">Depresión</span>
+    </div>
+    <div class="tr-chip" onclick="trOpen('ansiedad',this)">
+      <span class="tr-chip-icon">⚡</span>
+      <span class="tr-chip-label">Ansiedad y pánico</span>
+    </div>
+    <div class="tr-chip" onclick="trOpen('toc',this)">
+      <span class="tr-chip-icon">🔁</span>
+      <span class="tr-chip-label">TOC</span>
+    </div>
+    <div class="tr-chip" onclick="trOpen('tdah',this)">
+      <span class="tr-chip-icon">🧠</span>
+      <span class="tr-chip-label">TDAH</span>
+    </div>
+    <div class="tr-chip" onclick="trOpen('insomnio',this)">
+      <span class="tr-chip-icon">🌙</span>
+      <span class="tr-chip-label">Insomnio y sueño</span>
+    </div>
+    <div class="tr-chip" onclick="trOpen('burnout',this)">
+      <span class="tr-chip-icon">🔥</span>
+      <span class="tr-chip-label">Burnout</span>
+    </div>
+    <div class="tr-chip" onclick="trOpen('duelo',this)">
+      <span class="tr-chip-icon">🕊️</span>
+      <span class="tr-chip-label">Duelo</span>
+    </div>
+  </div>
+
+  <!-- DEPRESIÓN -->
+  <div class="tr-panel" id="tr-depresion">
+    <h3>Depresión: cuando no parece depresión</h3>
+    <p>La depresión no siempre se ve como llorar todo el día o tener deseos de ya no vivir. Muchas veces se presenta con síntomas que parecen insignificantes por separado, pero que cuando llevan más de dos semanas presentes son una señal importante de que algo está pasando en tu cerebro.</p>
+    <p>Lo más común es sentir el ánimo decaído, tener llanto fácil o estar irritable sin razón aparente. Casi siempre viene acompañado de perder el interés en las cosas que antes te hacían feliz o te hacían sentir vivo — a eso en psiquiatría lo llamamos anhedonia. Otro síntoma muy frecuente es esa sensación de "sé lo que tengo que hacer pero no tengo ganas de hacerlo", como si la motivación interna simplemente desapareciera — eso se llama abulia.</p>
+    <p>La depresión también afecta el apetito y el sueño: puedes perder el gusto por la comida, comer menos sin proponértelo, o tener dificultades para dormir. Todo esto termina afectando la concentración, la memoria y la energía física — muchas personas describen sentirse "lentos" o sin fuerza.</p>
+    <p>La clave para sospechar depresión es cuando estos síntomas se vuelven constantes por más de dos semanas y empiezan a generar problemas en el trabajo, la escuela, la familia, la pareja o los amigos.</p>
+    <div class="tr-cuando">
+      <strong>¿Cuándo buscar ayuda?</strong>
+      <p>Cuando empiezas a notar cambios negativos concretos: querer dejar de ir al trabajo, faltar a la escuela, perder el interés en convivir con personas que te importan. No hay que esperar a estar en crisis.</p>
+      <p>Si aparecen pensamientos de que sería mejor no estar aquí, o ideas de hacerte daño, la valoración debe ser lo más pronto posible. Otro momento importante es cuando los pensamientos se vuelven persistentemente negativos y desesperanzadores — cuando ya no ves salida.</p>
+    </div>
+    <div class="tr-tto">
+      <strong>Sobre el tratamiento</strong>
+      <p>Existen muchos mitos — que el medicamento psiquiátrico es solo para personas con trastornos graves, que te va a sedar, que te va a cambiar la personalidad. La realidad es diferente.</p>
+      <p>El cerebro produce de forma natural una sustancia que permite que las neuronas se comuniquen entre sí: la serotonina. Ayuda a sentirte bien, con energía, tranquilo y con esperanza. En la depresión, el estrés sostenido reduce esa serotonina y afecta áreas del cerebro que regulan el estado de ánimo. Los antidepresivos más usados — los ISRS — ayudan al cerebro a recuperar ese balance. No crean dependencia, no cambian tu forma de ser ni tu personalidad.</p>
+      <p>Los efectos secundarios, cuando ocurren, suelen ser leves y transitorios en los primeros días: náusea leve, dolor de cabeza, cambios en el sueño. Subiendo la dosis gradualmente se reducen considerablemente. Existen otros tipos de antidepresivos que funcionan de formas distintas y que pueden elegirse según el perfil y las necesidades de cada paciente.</p>
+      <p>Tomar medicamento no es señal de debilidad ni un atajo. Nadie elige enfermarse. La depresión es un proceso bioquímico y social complejo — darle al cerebro la ayuda que necesita es exactamente lo mismo que tratar cualquier otra condición médica.</p>
+    </div>
+    <button class="tr-close" onclick="trClose('depresion',this)">▲ Cerrar</button>
+  </div>
+
+  <!-- ANSIEDAD -->
+  <div class="tr-panel" id="tr-ansiedad">
+    <h3>Ansiedad y ataques de pánico</h3>
+    <p>La ansiedad puede ser normal ante situaciones difíciles de la vida. Cuando deja de ser normal la consideramos un trastorno, y se caracteriza por estar constantemente preocupado por situaciones futuras que quizá ni siquiera han pasado — o que no sabemos si van a pasar.</p>
+    <p>La ansiedad no son solo preocupaciones constantes. También altera el sueño, el apetito, y tiene un componente físico muy real: lumbalgia, tensión en hombros y nuca, dolor de cabeza, sensación de vacío en el estómago, cambios en el tránsito intestinal. No es imaginación — es el sistema nervioso en estado de alerta permanente.</p>
+    <p>Algunos pacientes viven ataques de pánico: episodios súbitos de miedo intenso con palpitaciones, presión en el pecho, sensación de falta de aire, temblor o sudor frío. Suelen durar unos minutos pero son aterradores. Otro tipo frecuente son las fobias — miedos intensos a situaciones, animales u objetos específicos que pueden desencadenar todos los síntomas anteriores.</p>
+    <div class="tr-cuando">
+      <strong>¿Cuándo buscar ayuda?</strong>
+      <p>Cuando los síntomas empiezan a causar problemas en tu vida personal, social, laboral o académica — cuando dejas de hacer actividades cotidianas por miedo o malestar.</p>
+    </div>
+    <div class="tr-tto">
+      <strong>Sobre el tratamiento</strong>
+      <p>La combinación de TCC y medicamento es el tratamiento más eficaz. La terapia no consiste en exponerse sin sentido a lo que da miedo — trabaja sobre las creencias y la historia de vida que nos hicieron susceptibles a la ansiedad, y enseña técnicas de regulación. Los medicamentos más usados son los antidepresivos ISRS, que calman la amígdala cerebral — nuestro centro del miedo. Las benzodiacepinas (clonazepam, alprazolam) se usan solo en la fase inicial, a dosis mínimas y por tiempo corto, bajo supervisión.</p>
+    </div>
+    <button class="tr-close" onclick="trClose('ansiedad',this)">▲ Cerrar</button>
+  </div>
+
+  <!-- TOC -->
+  <div class="tr-panel" id="tr-toc">
+    <h3>TOC: cuando la alarma del cerebro no se apaga</h3>
+    <p>El trastorno obsesivo-compulsivo no tiene que ver con la inteligencia ni con la lógica. Todos tenemos un sistema de filtrado de amenazas en el cerebro — una estructura llamada cuerpo estriado que nos ayuda a discernir si algo es realmente peligroso. En el TOC, esa alarma no puede detenerse y sigue enviando señales de peligro ante situaciones completamente inofensivas.</p>
+    <p>El TOC tiene dos componentes: una idea intrusiva — un pensamiento, imagen o frase que aparece contra nuestra voluntad y no queremos tener — y una compulsión — un acto repetitivo para intentar calmar el malestar que genera esa idea. Girar la llave del gas siete veces para asegurarse de que cerró, revisar la puerta repetidamente antes de dormir, lavarse las manos durante minutos sin poder parar.</p>
+    <p>Los tipos más frecuentes incluyen TOC de contaminación (miedo a gérmenes, suciedad), de verificación (revisar cerraduras, gas, aparatos), de orden y simetría, y los más silenciados: los pensamientos intrusivos egodistónicos — ideas perturbadoras de hacerle daño a alguien querido, pensamientos sexuales no deseados o de contenido religioso. Estos últimos generan mucha vergüenza, pero tenerlos no significa querer actuar en consecuencia — son síntomas del trastorno, no un reflejo de tu carácter.</p>
+    <div class="tr-cuando">
+      <strong>¿Cuándo buscar ayuda?</strong>
+      <p>Cuando las ideas intrusivas son muy molestas y constantes a lo largo del día, o cuando las compulsiones consumen tanto tiempo que afectan tu funcionalidad y vida diaria.</p>
+    </div>
+    <div class="tr-tto">
+      <strong>Sobre el tratamiento</strong>
+      <p>La TCC con técnicas de exposición y prevención de respuesta, combinada con antidepresivos ISRS (sertralina, fluoxetina, fluvoxamina, escitalopram), es el tratamiento de elección. Es un tratamiento largo — se requiere un mínimo de un año para controlar los síntomas — pero la mejoría puede empezar a sentirse entre 3 y 5 semanas después de iniciar. Con el tiempo, y dependiendo de la respuesta, puede reducirse o incluso suspenderse el medicamento.</p>
+    </div>
+    <button class="tr-close" onclick="trClose('toc',this)">▲ Cerrar</button>
+  </div>
+
+  <!-- TDAH -->
+  <div class="tr-panel" id="tr-tdah">
+    <h3>TDAH: un sistema operativo diferente</h3>
+    <p>El TDAH no es una enfermedad exclusiva de la infancia — es una condición con la que se nace y que acompaña toda la vida. Como le explico a mis pacientes: algunas personas procesan el mundo con Windows, y los pacientes con TDAH tienen un sistema operativo diferente — Mac, Linux, lo que sea. No es menor inteligencia ni menos capacidad. Es un cerebro que funciona distinto.</p>
+    <p>En el TDAH, la corteza prefrontal — el área que nos ayuda a organizarnos, regular impulsos, sostener la atención y coordinar tareas — tiene dificultades para usar la dopamina de forma eficiente. El resultado: dificultad para mantener la atención en tareas que requieren esfuerzo, procrastinación crónica, impulsividad, sensación de "motor que no para", olvidos frecuentes.</p>
+    <p>En niños, los síntomas son más visibles: hiperactividad, impulsividad, dificultad para esperar turnos, oposición a la autoridad. También existe el hiperfoco — no pueden hacer tarea por 20 minutos pero pueden jugar videojuegos 9 horas sin comer ni ir al baño.</p>
+    <p>En adultos los síntomas se atenúan pero siguen: dejar todo para el último momento, olvidar llaves, fechas o datos importantes, consumo impulsivo de sustancias, dificultad para regular emociones. La comorbilidad con depresión y ansiedad es muy común.</p>
+    <p>En mujeres, el diagnóstico se pasa por alto con frecuencia porque predomina la variante inatenta — sin hiperactividad evidente. Las niñas "solo están distraídas". Las adultas acumulan diagnósticos de ansiedad o depresión que no terminan de responder al tratamiento. Si te identificas con esto, vale la pena una evaluación.</p>
+    <div class="tr-cuando">
+      <strong>¿Cuándo buscar ayuda?</strong>
+      <p>Cuando los patrones de inatención, impulsividad u olvidos generan problemas concretos en el trabajo, las relaciones o la vida cotidiana — especialmente si estos patrones vienen desde la infancia. Antecedentes familiares de TDAH o autismo, dislexia, disgrafía o dificultades escolares específicas son pistas clínicas importantes.</p>
+    </div>
+    <div class="tr-tto">
+      <strong>Sobre el tratamiento</strong>
+      <p>El tratamiento farmacológico es la piedra angular porque atenúa los síntomas y facilita todo lo demás — incluyendo la terapia. En México contamos con dos estimulantes: el metilfenidato, disponible en presentación de liberación inmediata (cada 4 horas) o prolongada (8-10 horas), y la lisdexanfetamina, con una duración de 10 a 14 horas. Ambos funcionan desde la primera toma, con efecto en 30 a 60 minutos. Uno de los mitos más comunes es que reducen la estatura o generan adicción — esto es falso cuando se usan en los pacientes indicados bajo supervisión de un especialista.</p>
+      <p>Cuando los estimulantes no son tolerados, existe la atomoxetina, un inhibidor de recaptura de noradrenalina que funciona de forma similar a un antidepresivo — requiere tomarse diariamente de forma constante para ver efecto. En adultos, el bupropión también ha mostrado utilidad en ciertos perfiles de pacientes.</p>
+      <p>La TCC para TDAH complementa el tratamiento trabajando estrategias de organización, manejo del tiempo, regulación emocional y los patrones de pensamiento que se desarrollaron antes del diagnóstico. El enfoque combinado da mejores resultados a largo plazo que cualquiera de los dos por separado.</p>
+    </div>
+    <button class="tr-close" onclick="trClose('tdah',this)">▲ Cerrar</button>
+  </div>
+
+  <!-- INSOMNIO -->
+  <div class="tr-panel" id="tr-insomnio">
+    <h3>Insomnio y trastornos del sueño</h3>
+    <p>El insomnio no es solo no poder conciliar el sueño al acostarnos. También es despertarse varias veces en la noche sin poder volver a dormir, o despertar mucho antes de lo planeado sintiéndose agotado. El sueño poco reparador — dormir las horas correctas y aun así amanecer cansado — también cuenta.</p>
+    <p>El insomnio puede ser síntoma de ansiedad o depresión, efecto adverso de medicamentos, consecuencia de mal control del dolor, o una patología propia del sueño. La apnea obstructiva del sueño es una de las más frecuentes y subdiagnosticadas: pequeños lapsos en los que dejamos de respirar durante la noche, generalmente por alteraciones anatómicas, sobrepeso u obesidad, que colapsan la vía aérea. El resultado es un sueño aparentemente largo pero completamente no reparador.</p>
+    <p>También existe el otro extremo: sueño excesivo a pesar de dormir bien. La narcolepsia se caracteriza por somnolencia súbita durante el día sin importar cuánto se haya dormido — un trastorno que afecta la funcionalidad de forma importante y que merece evaluación especializada.</p>
+    <div class="tr-cuando">
+      <strong>¿Cuándo buscar ayuda?</strong>
+      <p>Cuando los problemas de sueño empiezan a causar dificultades en el trabajo, la escuela o la vida personal. Los trastornos del sueño no son inocuos — se asocian a mayor riesgo de diabetes, hipertensión y enfermedades cardiovasculares.</p>
+    </div>
+    <div class="tr-tto">
+      <strong>Sobre el tratamiento</strong>
+      <p>Con una buena historia clínica se puede identificar la causa del insomnio y orientar el tratamiento. Algunos casos requieren estudios de laboratorio o una polisomnografía — un estudio del sueño — para diagnosticar condiciones como la apnea obstructiva.</p>
+      <p>El tratamiento generalmente comienza con medidas de higiene del sueño: cambios en hábitos, horarios, ambiente y conductas alrededor del sueño. La TCC enfocada en insomnio es una alternativa libre de medicamentos con evidencia sólida — trabaja la relación que hemos desarrollado con el sueño y los pensamientos que la mantienen alterada.</p>
+      <p>Ocasionalmente se apoya con medicamento para facilitar la adopción de nuevos hábitos, especialmente en la fase inicial. Si el insomnio es síntoma de ansiedad, depresión u otra condición, tratar la causa de fondo suele resolver también el sueño.</p>
+    </div>
+    <button class="tr-close" onclick="trClose('insomnio',this)">▲ Cerrar</button>
+  </div>
+
+  <!-- BURNOUT -->
+  <div class="tr-panel" id="tr-burnout">
+    <h3>Burnout: cuando el trabajo te vacía</h3>
+    <p>En todo trabajo hay ciclos de mayor o menor demanda. Pero a veces, sin darnos cuenta, entramos en una racha donde empezamos a sonar cansados de lo que hacemos — perdemos el interés en nuestra profesión a pesar de que fue una meta o un sueño. Eso puede ser burnout.</p>
+    <p>El burnout es un síndrome clínico que va más allá del cansancio normal. Sus señales más características: evitar el trabajo constantemente, sentirse irritable o tenso en el entorno laboral sin causa aparente, no tolerar a compañeros, clientes o pacientes. También puede haber frustración, llanto o ansiedad específicamente ligados al trabajo, llegando a generar aversión real por la propia ocupación.</p>
+    <p>Los factores de riesgo más comunes son jornadas laborales intensas, alta carga de trato con personas, ambientes competitivos o con exigencia extrema en el desempeño. Los humanos no estamos diseñados para realizar la misma actividad mecanizada todo el tiempo.</p>
+    <div class="tr-cuando">
+      <strong>¿Cuándo buscar ayuda?</strong>
+      <p>Cuando el agotamiento ya no mejora con un fin de semana de descanso, cuando afecta tus relaciones personales, o cuando sientes que ya no puedes más pero tampoco puedes parar. A veces el cerebro llega a un punto donde necesita ayuda profesional para poder siquiera tomar decisiones de cambio.</p>
+    </div>
+    <div class="tr-tto">
+      <strong>Sobre el tratamiento</strong>
+      <p>No existe un protocolo único — el burnout sigue en estudio. El descanso real es parte del tratamiento, pero cuando el cerebro ya llegó al límite muchas veces no puede descansar solo: hay insomnio, ansiedad o síntomas depresivos que lo impiden. Tratar esas comorbilidades cambia completamente el panorama. La psicoterapia ayuda a identificar los patrones que sostienen el agotamiento y a tomar decisiones con más claridad.</p>
+    </div>
+    <button class="tr-close" onclick="trClose('burnout',this)">▲ Cerrar</button>
+  </div>
+
+  <!-- DUELO -->
+  <div class="tr-panel" id="tr-duelo">
+    <h3>Duelo: la pérdida tiene muchas formas</h3>
+    <p>El duelo no es solo la pérdida de un ser querido. También lo generan pérdidas como una enfermedad que cambia la calidad de vida, perder un empleo, terminar una relación de pareja o amistad, o incluso perder un nivel socioeconómico o un reconocimiento. Cualquier pérdida significativa puede desencadenar un proceso de duelo.</p>
+    <p>El duelo suele atravesar cinco fases — negación, enojo, tristeza, negociación y aceptación — aunque cada persona las vive en su propio orden y puede regresar a cualquiera de ellas varias veces. No hay una forma "correcta" de hacer el duelo.</p>
+    <p>La tristeza es una parte normal del proceso, pero tiene límites: no debe durar más de dos semanas ni causar deterioro en el trabajo, la familia o la vida social. Si bien en el duelo pueden aparecer síntomas similares a la depresión, hoy sabemos que desarrollar un cuadro depresivo completo durante el duelo no es normal ni sano — eso es un duelo complicado que merece atención. Lo mismo aplica para los trastornos de ansiedad que pueden surgir como consecuencia de una pérdida.</p>
+    <div class="tr-cuando">
+      <strong>¿Cuándo buscar ayuda?</strong>
+      <p>Cuando las fases del duelo siguen muy presentes después de 6 meses y están limitando la vida diaria. O antes, si aparecen síntomas depresivos o ansiosos que interfieren con el funcionamiento — no hay que esperar ese plazo si el malestar es intenso.</p>
+    </div>
+    <div class="tr-tto">
+      <strong>Sobre el tratamiento</strong>
+      <p>El acompañamiento psicoterapéutico facilita el proceso para la mayoría de las personas. Si surgen comorbilidades como depresión o ansiedad, tratarlas a tiempo hace este camino mucho más llevadero. El objetivo no es olvidar ni "superar" la pérdida, sino integrarla de forma que no limite la vida.</p>
+    </div>
+    <button class="tr-close" onclick="trClose('duelo',this)">▲ Cerrar</button>
+  </div>
+
+</section>
+
+<script>
+function trOpen(id, chip) {
+  document.querySelectorAll('.tr-chip').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tr-panel').forEach(p => p.classList.remove('visible'));
+  chip.classList.add('active');
+  var panel = document.getElementById('tr-' + id);
+  panel.classList.add('visible');
+  setTimeout(function(){ panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+}
+function trClose(id, btn) {
+  document.getElementById('tr-' + id).classList.remove('visible');
+  document.querySelectorAll('.tr-chip').forEach(c => c.classList.remove('active'));
+}
+</script>
 
 <!-- DUDAS SOLUCIONADAS -->
 <section id="dudas">
