@@ -179,7 +179,7 @@ function ServicesSection() {
             <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.65)', fontWeight: 300 }}>Agenda en línea o escríbeme directamente por WhatsApp.</div>
           </div>
           <div style={{ display: 'flex', gap: 12, flexShrink: 0 }}>
-            <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank"
+            <a href="https://www.doctoralia.com.mx/perfil/alejandro-salazar-rodriguez" target="_blank"
               style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 500, fontSize: 14, background: 'white', color: '#1B2E5E', padding: '12px 24px', borderRadius: 6, textDecoration: 'none' }}>
               Doctoralia
             </a>
@@ -253,7 +253,7 @@ function ContactSection() {
         </div>
         <div style={{ background: '#F7F4EE', borderRadius: 20, padding: '48px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20 }}>
           <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, color: '#1B2E5E', marginBottom: 8 }}>Elige cómo agendar</div>
-          <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico" target="_blank"
+          <a href="https://www.doctoralia.com.mx/perfil/alejandro-salazar-rodriguez" target="_blank"
             style={{ display: 'block', background: '#1B2E5E', color: 'white', padding: '18px 28px', borderRadius: 10, textDecoration: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 15, fontWeight: 500, textAlign: 'center' }}>
             Agendar en Doctoralia
           </a>

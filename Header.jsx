@@ -34,7 +34,7 @@ function Nav({ activeSection }) {
         </div>
       </a>
       {mobile ? (
-        <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico"
+        <a href="https://www.doctoralia.com.mx/perfil/alejandro-salazar-rodriguez"
           target="_blank"
           style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 500, background: '#1B2E5E', color: 'white', padding: '8px 16px', borderRadius: 6, textDecoration: 'none', flexShrink: 0 }}>
           Agendar
@@ -47,7 +47,7 @@ function Nav({ activeSection }) {
               onMouseLeave={e => e.target.style.color = activeSection === l.href.slice(1) ? '#1B2E5E' : '#6B7280'}
             >{l.label}</a>
           ))}
-          <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico"
+          <a href="https://www.doctoralia.com.mx/perfil/alejandro-salazar-rodriguez"
             target="_blank"
             style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 500, background: '#1B2E5E', color: 'white', padding: '9px 22px', borderRadius: 6, textDecoration: 'none' }}
             onMouseEnter={e => e.target.style.background = '#2a3f78'}
@@ -100,7 +100,7 @@ function Hero() {
             Psiquiatra con Maestría en Terapia Cognitivo-Conductual. Un espacio seguro, profesional y sin juicios, con herramientas basadas en evidencia para tu vida diaria.
           </p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <a href="https://www.doctoralia.com.mx/alejandro-salazar-rodriguez/psiquiatra/ciudad-de-mexico"
+            <a href="https://www.doctoralia.com.mx/perfil/alejandro-salazar-rodriguez"
               target="_blank"
               style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 500, fontSize: 15, background: '#1B2E5E', color: 'white', padding: '14px 28px', borderRadius: 6, textDecoration: 'none' }}>
               Agenda tu cita
